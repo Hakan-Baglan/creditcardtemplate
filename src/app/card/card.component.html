@@ -1,0 +1,38 @@
+<div class="hk-flip-card ">
+    <div class="hk-flip-card-inner " [ngClass]="{'fliped':isFlip}">
+        <div class="hk-flip-card-front">
+            <div class="chip">
+                <img src="../assets/images/chip.png" alt="">
+            </div>
+            <div class="front-vissa">
+                <img src="../assets/images/visa.png">
+                <p class="yazi">VALID TILL</p>
+                <p class="tarih">{{month | formatNumber}} / {{year | formatNumber}}</p>
+            </div>
+            <div class="text">
+                <div class="card-number">
+                    <span class="number">
+                        {{cardNumber | formatCardNumber}}
+                    </span>
+                    <span class="back-number"></span>
+                </div>
+            </div>
+            <div class="name">
+                <p>CARD HOLDER</p>
+                <h5>{{(name?name:'name surname') | uppercase | slice:0:20}}</h5>
+            </div>
+        </div>
+        <div class="hk-flip-card-back">
+            <div class="cvv"></div>
+            <div class="pattern">
+                <img src="../assets/images/pattern.png">
+                <span>{{cvc?(cvc.toString() | slice: 0: 3):'___'}}</span>
+            </div>
+            <p class="description">Hakan BAĞLAN tarafından yapılmıştır.</p>
+            <p class="customer-signature">CUSTOMER SIGNATURE</p>
+            <div class="back-vissa">
+                <img src="../assets/images/visa.png">
+            </div>
+        </div>
+    </div>
+</div>

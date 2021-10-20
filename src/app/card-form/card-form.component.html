@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="form" [formGroup]="form">
+
+  <card [cardNumber]="CardNumber?.value" [month]="1" [year]="21" [cvc]="CVC?.value" [month]="Month?.value"
+  [year]="Year?.value" [name]="Name?.value" [isFlip]="isFlip"></card>
+
+
+  <div class="hk">
+
+    <div class="input-group">
+      <label>Card Number</label>
+      <input type="text" (keypress)="numberOnly($event)" maxlength="16" formControlName="cardNumber" autofocus>
+    </div>
+
+    <div class="input-group">
+      <label>Card Holder</label>
+      <input type="text" maxlength="20" class="harfInput" formControlName="name" autofocus required>
+    </div>
+
+    <div class="select-group d-flex">
+      <div class="month">
+        <select formControlName="month" type="number">
+          <option selected>Month</option>
+          <option *ngFor="let item of month">{{item}}</option>
+        </select>
+
+      </div>
+
+      <div class="year">
+        <select formControlName="year" type="number">
+          <option selected>Year</option>
+          <option *ngFor="let item of year">{{item}}</option>
+        </select>
+
+      </div>
+
+      <div class="cvc">
+        <input type="number" onKeyPress="if(this.value.length==3) return false;" min="0" placeholder="CVC"
+          formControlName="cvc" (focus)="focus()" (blur)="blur()">
+      </div>
+    </div>
+    <button type="button">Block level button</button>
+  </div>
+
+</div>
+</div>

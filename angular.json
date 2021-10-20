@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "credid-card-form"
+    }
+  },
+  "defaultProject": "credid-card-form",
+  "cli": {
+    "analytics": "7e4cfef5-3ea2-4b41-8f12-485ebcbe4e36"
+  }
 }
