@@ -34,7 +34,6 @@ export class CardFormComponent implements OnInit {
     
   }
   initForm() {
-
     this.form = this.fb.group({
       name: [],
       month: [],
@@ -63,5 +62,9 @@ export class CardFormComponent implements OnInit {
     return true;
 
   } 
+
+  postForm(){
+    console.log(this.form.value);
+  }
 
 }

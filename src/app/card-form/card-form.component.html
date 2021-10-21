@@ -8,19 +8,19 @@
   <div class="hk">
 
     <div class="input-group">
-      <label>Card Number</label>
-      <input type="text" (keypress)="numberOnly($event)" maxlength="16" formControlName="cardNumber" autofocus>
+      <label>Kart Numarası</label>
+      <input type="text" (keypress)="numberOnly($event)" maxlength="16" formControlName="cardNumber" autofocus required>
     </div>
 
     <div class="input-group">
-      <label>Card Holder</label>
-      <input type="text" maxlength="20" class="harfInput" formControlName="name" autofocus required>
+      <label>Kart Üzerindeki Ad Soyad</label>
+      <input type="text" maxlength="20" pattern="[a-zA-Z-]+" class="harfInput" formControlName="name" autofocus required>
     </div>
 
     <div class="select-group d-flex">
       <div class="month">
         <select formControlName="month" type="number">
-          <option selected>Month</option>
+          <option selected>Ay</option>
           <option *ngFor="let item of month">{{item}}</option>
         </select>
 
@@ -28,18 +28,18 @@
 
       <div class="year">
         <select formControlName="year" type="number">
-          <option selected>Year</option>
+          <option selected>Yıl</option>
           <option *ngFor="let item of year">{{item}}</option>
         </select>
 
       </div>
 
       <div class="cvc">
-        <input type="number" onKeyPress="if(this.value.length==3) return false;" min="0" placeholder="CVC"
-          formControlName="cvc" (focus)="focus()" (blur)="blur()">
+        <input type="number" onKeyPress="if(this.value.length==3) return false;" min="0" placeholder="CVV Kodu"
+          formControlName="cvc" (focus)="focus()" (blur)="blur()" required>
       </div>
     </div>
-    <button type="button">Block level button</button>
+    <button type="button" (click)="postForm()">Ödeme Yap</button>
   </div>
 
 </div>
