@@ -35,7 +35,7 @@
       </div>
 
       <div class="cvc">
-        <input type="number" onKeyPress="if(this.value.length==3) return false;" min="0" placeholder="CVV Kodu"
+        <input type="text" (keypress)="numberOnly($event)" maxlength="3" min="0" placeholder="CVV Kodu"
           formControlName="cvc" (focus)="focus()" (blur)="blur()" required>
       </div>
     </div>
